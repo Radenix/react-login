@@ -1,0 +1,53 @@
+{
+  "departamentler": [
+    {
+      "ad": "asfdasdfasdfgesargf",
+      "id": 1
+    }
+  ],
+  "sobeler": [
+    {
+      "ad": "asdasdasda",
+      "id": 1
+    },
+    {
+      "ad": "asdasdasd",
+      "name": "d",
+      "departament": "asdfsadfsad",
+      "id": 2
+    }
+  ],
+  "isciheyeti": [
+    {
+      "ad": "asdasd",
+      "soyad": "asdasd",
+      "cartid": "asdasdasdasd",
+      "sobe": "asdasd",
+      "departament": "as",
+      "stat": "asdasd",
+      "issaatlari": "aaa",
+      "status": "alalala",
+      "id": 1
+    }
+  ],
+  "sinif": [
+    {
+      "ad": "asdasd",
+      "dersbaslamasaati": "asdasd",
+      "dersbitmesaati": "asdasd",
+      "hefteningunu": "asdasd",
+      "sinifnomresi": "asaaaaaaaas",
+      "sinifadi": "d",
+      "id": 1
+    },
+    {
+      "ad": "asdas",
+      "dersbaslamasaati": "aaaa",
+      "dersbitmesaati": "aaaaaaaa",
+      "hefteningunu": "aaaaaaaaaaa",
+      "sinifnomresi": "aaaa",
+      "id": 2
+    }
+  ],
+  "sagird": []
+}

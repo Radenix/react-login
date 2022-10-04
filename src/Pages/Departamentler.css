@@ -1,0 +1,10 @@
+.layout{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 75%;
+    height: 100%;
+}
+.sidebar{
+    position: absolute;    
+}
