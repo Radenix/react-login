@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -14,9 +15,11 @@ const initialValue = { ad: ""}
 const Departamentler = () => {
   const [gridApi, setGridApi] = useState(null);
   const [tableData, setTableData] = useState(null);
-  const url = `http://localhost:4000/departamentler`
+  const url = `http://213.136.85.174:8384/school/departament?page=0&size=15`
+  const urll = `http://213.136.85.174:8384/login/u`
   const [open, setOpen] = React.useState(false);
   const [formData, setFormData] = useState(initialValue)
+  const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWphdCIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNjY1MDY2NjQxLCJmaXJzdF9uYW1lIjoibmlqYXQiLCJsYXN0X25hbWUiOiJuaWphdCIsInVzZXJuYW1lIjoibmlqYXQiLCJpZGQiOjEsInJvbGUiOjEsIm9mZmljZW5hbWUiOiJuaWphdCIsIm1vYmlsZSI6IjEyMyIsImxvY2F0aW9uaWQiOjAsImV4cCI6MTY2NTA3MDk2MX0.bdldBpKzW0AVaxRKktZ5DHqAwGv1gQPkM36N1fmVmt2iWNkEe-V_9pVo8ZIa6zEHZJ0ykJC0Ks5R6yysmVChUA"
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -41,8 +44,17 @@ const Departamentler = () => {
   useEffect(() => {
     getUsers()
   }, [])
-  const getUsers = () => {
-    fetch(url).then(resp => resp.json()).then(resp => setTableData(resp))
+  const getUsers = async () => {
+    await fetch(url, {
+      method: 'POST',
+      headers:  {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${token}`,
+        "Access-Control-Allow-Origin": '*',
+        "mode":'cors'
+      }
+    }).then(resp => resp.json()).then(resp => setTableData(resp))
   }
 
   const onChange = (e) => {
@@ -103,7 +115,7 @@ const Departamentler = () => {
         <Sidebar/>
         </div>
      <div className="layout">   
-      <h1 style={{ textAlign: "center" }}>Departamentler</h1>
+      <h1 style={{ textAlign: "center" }}>Departamentler </h1>
       <Grid align="right">
         <Button variant="contained" color="primary" onClick={handleClickOpen}>Departament əlavə edin</Button>
       </Grid>

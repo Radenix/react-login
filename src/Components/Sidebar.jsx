@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import { SidebarData } from './SidebarData'
+
 
 function Sidebar() {
     return (
@@ -8,17 +10,15 @@ function Sidebar() {
             <ul className='SidebarList'>
                 {SidebarData.map((val, key) => {
                     return (
-                    <li 
+                
+                    <Link to={val.link}><li 
                         key={key}
                         className="row" 
                         id={window.location.pathname == val.link ? "active" : ""}
-                        onClick={() => {
-                            window.location.pathname = val.link;
-                            
-                        }}
                     >
                         <div id='icon'>{val.icon}</div><div id='title'>{val.title}</div>
                     </li>
+                    </Link>
                     );
                 })}
             </ul>

@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Navigate} from 'react-router-dom'
 function App() {
-  const url = "http://213.136.85.174:8384/login/signin"
+  const url = "u"
   const [name, setName] = useState('')
   const [navigate, setNavigate] = useState(false)
 
@@ -26,6 +26,7 @@ function App() {
     <div className="App">
       <Sidebar />
       <span>Hi {name} !</span>
+      
     </div>
   );
 }

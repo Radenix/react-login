@@ -49,7 +49,9 @@ const Isciheyeti = () => {
     getUsers()
   }, [])
   const getUsers = () => {
-    fetch(url).then(resp => resp.json()).then(resp => setTableData(resp))
+    fetch(url)
+    .then(resp => resp.json())
+    .then(resp => setTableData(resp))
   }
 
   const onChange = (e) => {
